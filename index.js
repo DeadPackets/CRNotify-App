@@ -18,10 +18,11 @@ import {Button, Header} from 'react-native-elements';
 import {TabNavigator} from 'react-navigation';
 import Spinner from 'react-native-spinkit';
 import DropdownAlert from 'react-native-dropdownalert';
+import SplashScreen from 'react-native-splash-screen'
 
 import {Router} from './views/router'
 import InfoScreen from './views/InfoScreen';
-// import ManageScreen from './views/ManageScreen';
+import ManageScreen from './views/ManageScreen';
 // import SettingsScreen from './views/SettingsScreen';
 
 export default class App extends Component {
@@ -33,7 +34,8 @@ export default class App extends Component {
       isLoggedIn: false,
       doneCheckingStatus: false,
       enabled: false,
-      googleToken: 'null'
+      googleToken: 'null',
+      errMsg: ''
     }
   }
 
@@ -48,9 +50,17 @@ export default class App extends Component {
 
   // Set up Linking
   componentDidMount() {
-    fetch('http://localhost:8080/status').then((response) => response.json()).then((responseJSON) => {
-      this.setState({doneCheckingStatus: true, enabled: responseJSON.enabled})
+    SplashScreen.hide();
+    fetch('https://crnotify.cf/status').then((response) => response.json()).then((responseJSON) => {
+      this.setState({doneCheckingStatus: true, enabled: responseJSON.enabled, errMsg: 'Sorry! CRNotify has been disabled for now due to the registration being closed, but it will be back up when registration opens up.'})
+    }).catch(()=>{
+        this.setState({
+          doneCheckingStatus: true,
+          enabled: false,
+          errMsg: 'Sorry! But it seems that CRNotify is down! Maybe maintenence? Maybe it crashed? Please try again later or contact me (b00073615@aus.edu).'
+        })
     })
+
     Linking.addEventListener('url', this.handleOpenURL);
     // Launched from an external URL
     Linking.getInitialURL().then((url) => {
@@ -107,7 +117,7 @@ export default class App extends Component {
     }
   };
 
-  doLogin = () => this.openURL('http://localhost:8080/auth/mobile');
+  doLogin = () => this.openURL('https://crnotify.cf/auth/mobile');
 
   render() {
     if (this.state.doneCheckingStatus) {
@@ -138,7 +148,7 @@ export default class App extends Component {
               <Animatable.View animation="fadeInUp" duration={2000} style={styles.errorView}>
                 <Icon name="exclamation-triangle" size={100} color="#ffffff"/>
               </Animatable.View>
-              <Animatable.Text animation="zoomIn" duration={1000} delay={1200} style={styles.errorParagraph}>Sorry! CRNotify has been disabled for now due to the registration being closed, but it will be back up when registration opens up.</Animatable.Text>
+              <Animatable.Text animation="zoomIn" duration={1000} delay={1200} style={styles.errorParagraph}>{this.state.errMsg}</Animatable.Text>
             </View>
           </LinearGradient>
         )
@@ -212,5 +222,6 @@ const styles = StyleSheet.create({
     paddingTop: 20
   }
 });
+
 
 AppRegistry.registerComponent('CRNotify', () => RequiresConnection(App, OfflineMessage));

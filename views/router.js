@@ -2,6 +2,7 @@ import {TabNavigator} from 'react-navigation';
 
 import InfoScreen from './InfoScreen';
 import ManageScreen from './ManageScreen';
+import FAQScreen from './FAQScreen';
 
 export const Router = TabNavigator({
   Info: {
@@ -9,6 +10,9 @@ export const Router = TabNavigator({
   },
   Manage: {
     screen: ManageScreen
+  },
+  FAQ: {
+    screen: FAQScreen
   }
 }, {
   tabBarPosition: 'bottom',

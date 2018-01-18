@@ -43,7 +43,7 @@ export default class Manage extends Component {
   }
 
   fetchCRNs() {
-    fetch('http://localhost:8080/mobile_api/getCRNs?token=' + this.state.user.token, {method: 'POST'}).then((response) => {
+    fetch('https://crnotify.cf/mobile_api/getCRNs?token=' + this.state.user.token, {method: 'POST'}).then((response) => {
       const responseJSON = JSON.parse(response._bodyText)
       if (responseJSON.success) {
         this.setState({crns: responseJSON.data})
@@ -55,7 +55,7 @@ export default class Manage extends Component {
 
   addCRN() {
     this.setState({busy: true})
-    fetch('http://localhost:8080/mobile_api/addCRN?token=' + this.state.user.token + '&state=' + this.state.selectedOption + '&crn=' + this.state.crnVal, {method: 'POST'}).then((response) => {
+    fetch('https://crnotify.cf/mobile_api/addCRN?token=' + this.state.user.token + '&state=' + this.state.selectedOption + '&crn=' + this.state.crnVal, {method: 'POST'}).then((response) => {
       const responseJSON = JSON.parse(response._bodyText)
       if (responseJSON.success) {
         this.fetchCRNs()
@@ -85,7 +85,7 @@ export default class Manage extends Component {
   }
 
   removeCRN(crn) {
-    fetch('http://localhost:8080/mobile_api/removeCRN?token=' + this.state.user.token + '&crn=' + crn, {method: 'POST'}).then((response) => {
+    fetch('https://crnotify.cf/mobile_api/removeCRN?token=' + this.state.user.token + '&crn=' + crn, {method: 'POST'}).then((response) => {
       const responseJSON = JSON.parse(response._bodyText)
       if (responseJSON.success) {
         this.fetchCRNs()
@@ -107,7 +107,8 @@ export default class Manage extends Component {
   render() {
     const options = ["Open", "Closed"]
     return (<View style={{
-        flex: 1
+        flex: 1,
+        backgroundColor: '#ffffff'
       }}>
       <Spinner visible={this.state.busy}>
         <View style={{backgroundColor: 'rgba(0, 0, 0, 0.4)', flex: 1, justifyContent: 'center', alignItems: 'center'}}>
@@ -122,17 +123,19 @@ export default class Manage extends Component {
             fontWeight: '900'
           }
         }}
-        rightComponent={<Icon name="sign-out" color="#ffffff" type="font-awesome" onPress={this.props.screenProps.logOut}/>}
+        rightComponent={<Icon size={24} name="sign-out" color="#ffffff" type="font-awesome" onPress={this.props.screenProps.logOut}/>}
       />
       <ScrollView keyboardShouldPersistTaps='always' keyboardDismissMode='on-drag'>
         <Text style={styles.welcomeTitle}>Manage CRNs</Text>
         <FormLabel>CRN</FormLabel>
-        <FormInput disabled={this.state.busy} placeholder="Enter CRN here" onChangeText={(val) => this.setState({crnVal: val})} value={this.state.crnVal}/>
+        <FormInput keyboard="numeric" returnKeyType="done" disabled={this.state.busy} placeholder="Enter CRN here" onChangeText={(val) => this.setState({crnVal: val})} value={this.state.crnVal}/>
         <View style={{
             paddingHorizontal: 20,
             paddingTop: 20
           }}>
-          <SegmentedControls disabled={this.state.busy} options={options} onSelection={setSelectedOption.bind(this)} selectedOption={this.state.selectedOption}/>
+          <View style={{paddingBottom: 20}}>
+            <SegmentedControls disabled={this.state.busy} options={options} onSelection={setSelectedOption.bind(this)} selectedOption={this.state.selectedOption}/>
+          </View>
           <Button small={true} rounded={true} disabled={this.state.busy} backgroundColor="#0053b3" leftIcon={{
               name: 'plus',
               type: 'font-awesome'

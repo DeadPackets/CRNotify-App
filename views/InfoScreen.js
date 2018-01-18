@@ -35,7 +35,7 @@ export default class Info extends Component {
   };
 
   render() {
-    return (<View><Header centerComponent={{
+    return (<View style={{backgroundColor: '#ffffff', flex: 1}}><Header centerComponent={{
               text: 'CRNotify',
               style: {
                 color: '#fff',
@@ -43,7 +43,7 @@ export default class Info extends Component {
                 fontWeight: '900'
               }
             }}
-            rightComponent={<Icon name="sign-out" color="#ffffff" type="font-awesome" onPress={this.props.screenProps.logOut}/>}
+            rightComponent={<Icon size={24} name="sign-out" color="#ffffff" type="font-awesome" onPress={this.props.screenProps.logOut}/>}
           />
       <Animatable.View>
         <Text style={styles.welcomeTitle}>Welcome, {this.state.user.name}</Text>
@@ -63,11 +63,12 @@ const styles = StyleSheet.create({
   welcomeTitle: {
     paddingTop: 30,
     paddingBottom: 20,
+    paddingHorizontal: 20,
     alignItems: 'center',
     textAlign: 'center',
     justifyContent: 'center',
-    fontSize: 36,
-    fontWeight: "200"
+    fontSize: 32,
+    fontWeight: "400"
   },
   listIcon: {
     paddingRight: 10,
