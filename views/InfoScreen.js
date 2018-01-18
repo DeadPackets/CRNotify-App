@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import {
-  AppRegistry,
-  Platform,
   StyleSheet,
-  Linking,
   AsyncStorage,
   Text,
   View
@@ -31,7 +28,7 @@ export default class Info extends Component {
   static navigationOptions = {
     tabBarLabel: 'Info',
     // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-    tabBarIcon: ({tintColor}) => (<Icon name="info-circle" size={30} color={tintColor}/>)
+    tabBarIcon: ({tintColor}) => (<Icon name="info-circle" size={25} color={tintColor}/>)
   };
 
   render() {
@@ -63,6 +60,7 @@ const styles = StyleSheet.create({
   welcomeTitle: {
     paddingTop: 30,
     paddingBottom: 20,
+    color: 'black',
     paddingHorizontal: 20,
     alignItems: 'center',
     textAlign: 'center',

@@ -101,7 +101,7 @@ export default class Manage extends Component {
   static navigationOptions = {
     tabBarLabel: 'Manage',
     // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-    tabBarIcon: ({tintColor}) => (<FAIcon name="cog" size={30} color={tintColor}/>)
+    tabBarIcon: ({tintColor}) => (<FAIcon name="cog" size={25} color={tintColor}/>)
   };
 
   render() {
@@ -173,19 +173,19 @@ export default class Manage extends Component {
 const styles = StyleSheet.create({
   welcomeTitle: {
     paddingTop: 30,
+    color: 'black',
     paddingBottom: 20,
     alignItems: 'center',
     textAlign: 'center',
     justifyContent: 'center',
-    fontSize: 36,
-    fontWeight: "200"
+    fontSize: 36
   },
   formTitle: {
     paddingTop: 30,
+    color: 'black',
     paddingLeft: 20,
     paddingBottom: 20,
-    fontSize: 24,
-    fontWeight: "400"
+    fontSize: 24
   },
   cardContent: {
     fontSize: 20,
