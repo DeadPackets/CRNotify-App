@@ -34,10 +34,12 @@ xcuserdata
 *.xccheckout
 *.moved-aside
 DerivedData
+*.timestamp
 *.hmap
 *.ipa
 *.xcuserstate
 project.xcworkspace
+/ios/build/
 
 # Gradle
 /build/
