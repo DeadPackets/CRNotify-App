@@ -1,0 +1,20 @@
+dependencies: \
+  /Users/deadpackets/workspace/CRNotify-App/node_modules/react-native/React/Views/RCTView.m \
+  /Users/deadpackets/workspace/CRNotify-App/node_modules/react-native/React/Views/RCTView.h \
+  /Users/deadpackets/workspace/CRNotify-App/node_modules/react-native/React/Views/RCTBorderStyle.h \
+  /Users/deadpackets/workspace/CRNotify-App/node_modules/react-native/React/Views/RCTComponent.h \
+  /Users/deadpackets/workspace/CRNotify-App/node_modules/react-native/React/Views/RCTPointerEvents.h \
+  /Users/deadpackets/workspace/CRNotify-App/node_modules/react-native/React/Views/RCTAutoInsetsProtocol.h \
+  /Users/deadpackets/workspace/CRNotify-App/node_modules/react-native/React/Views/RCTBorderDrawing.h \
+  /Users/deadpackets/workspace/CRNotify-App/node_modules/react-native/React/Base/RCTConvert.h \
+  /Users/deadpackets/workspace/CRNotify-App/node_modules/react-native/React/Views/RCTAnimationType.h \
+  /Users/deadpackets/workspace/CRNotify-App/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/deadpackets/workspace/CRNotify-App/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/deadpackets/workspace/CRNotify-App/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/deadpackets/workspace/CRNotify-App/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/deadpackets/workspace/CRNotify-App/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
+  /Users/deadpackets/workspace/CRNotify-App/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/deadpackets/workspace/CRNotify-App/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/deadpackets/workspace/CRNotify-App/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/deadpackets/workspace/CRNotify-App/node_modules/react-native/React/Views/UIView+React.h \
+  /Users/deadpackets/workspace/CRNotify-App/node_modules/react-native/React/Modules/RCTI18nUtil.h

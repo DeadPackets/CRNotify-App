@@ -3,6 +3,7 @@ import {TabNavigator, TabBarTop} from 'react-navigation';
 import InfoScreen from './InfoScreen';
 import ManageScreen from './ManageScreen';
 import FAQScreen from './FAQScreen';
+import CreditScreen from './credits';
 
 export const Router = TabNavigator({
   Info: {
@@ -13,6 +14,9 @@ export const Router = TabNavigator({
   },
   FAQ: {
     screen: FAQScreen
+  },
+  Credits: {
+    screen: CreditScreen
   }
 }, {
   tabBarPosition: 'bottom',
@@ -21,8 +25,10 @@ export const Router = TabNavigator({
   tabBarOptions: {
     showIcon: true,
     activeTintColor: '#3b5998',
-    inactiveTintColor: '#bababa',
-
+    inactiveTintColor: '#838383',
+    labelStyle: {
+      fontSize: 11,
+    },
     style: {
       backgroundColor: '#ffffff',
       borderTopWidth: 0,

@@ -3,6 +3,7 @@ import {
   StyleSheet,
   AsyncStorage,
   Text,
+  StatusBar,
   View
 } from 'react-native';
 
@@ -32,7 +33,9 @@ export default class Info extends Component {
   };
 
   render() {
-    return (<View style={{backgroundColor: '#ffffff', flex: 1}}><Header centerComponent={{
+    return (<View style={{backgroundColor: '#ffffff', flex: 1}}>
+      <StatusBar barStyle="light-content" />
+      <Header centerComponent={{
               text: 'CRNotify',
               style: {
                 color: '#fff',

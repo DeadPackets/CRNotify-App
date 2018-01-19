@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, AsyncStorage, ScrollView, Text, View} from 'react-native';
 
-import * as Animatable from 'react-native-animatable';
 import FAIcon from 'react-native-vector-icons/FontAwesome';
 import {
   Header,

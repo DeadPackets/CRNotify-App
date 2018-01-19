@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Linking,
   AsyncStorage,
+  StatusBar,
   Text,
   View
 } from 'react-native';
@@ -126,6 +127,7 @@ export default class App extends Component {
           return <Router screenProps={{logOut: this.logOut.bind(this)}}/>
         } else {
           return (<LinearGradient style={styles.container} colors={['#00C9FF', '#92FE9D']}>
+            <StatusBar barStyle="dark-content" />
             <View style={styles.mainContainer}>
               <Animatable.Text animation="fadeInUp" duration={1500} style={styles.mainTitle}>CRNotify</Animatable.Text>
               <Animatable.Text animation="zoomIn" duration={1000} delay={500} style={styles.mainParagraph}>This is an app built for AUS students to recieve notifications on any changes in the availability of their chosen CRNs.</Animatable.Text>
@@ -143,6 +145,7 @@ export default class App extends Component {
       } else {
         return(
           <LinearGradient style={styles.container} colors={['#e93232', '#ff8e46']}>
+            <StatusBar barStyle="light-content" />
             <View style={styles.mainContainer}>
               <Animatable.Text animation="fadeInUp" duration={2000} style={styles.mainTitle}>CRNotify</Animatable.Text>
               <Animatable.View animation="fadeInUp" duration={2000} style={styles.errorView}>
@@ -155,6 +158,7 @@ export default class App extends Component {
       }
     } else {
       return (<LinearGradient style={styles.container} colors={['#00C9FF', '#92FE9D']}>
+        <StatusBar barStyle="dark-content" />
         <View style={styles.mainContainer}>
           <Animatable.Text animation="fadeInUp" duration={500} style={styles.mainTitle}>CRNotify</Animatable.Text>
           <Animatable.View animation="fadeInUp" duration={500} style={styles.disabledStatus}>
@@ -170,6 +174,7 @@ export default class App extends Component {
 
 const OfflineMessage = () => {
   return (<LinearGradient style={styles.container} colors={['#e93232', '#ff8e46']}>
+    <StatusBar barStyle="light-content" />
     <View style={styles.mainContainer}>
       <Animatable.Text animation="fadeInUp" duration={2000} style={styles.mainTitle}>CRNotify</Animatable.Text>
       <Animatable.View animation="fadeInUp" duration={2000} style={styles.errorView}>
@@ -186,11 +191,11 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   mainContainer: {
-    top: 200,
+    top: 100,
     alignItems: 'center'
   },
   mainTitle: {
-    fontSize: 72,
+    fontSize: 64,
     color: '#ffffff',
     fontWeight: '900'
   },

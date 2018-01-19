@@ -8,7 +8,6 @@ import {
   View
 } from 'react-native';
 
-import * as Animatable from 'react-native-animatable';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Header, List, ListItem, Button, Divider} from 'react-native-elements';
 import {TabNavigator} from 'react-navigation';
@@ -28,7 +27,8 @@ export default class Info extends Component {
   };
 
   render() {
-    return (<View style={{backgroundColor: '#ffffff', flex: 1}}><Header centerComponent={{
+    return (<View style={{backgroundColor: '#ffffff', flex: 1}}>
+      <Header centerComponent={{
               text: 'CRNotify',
               style: {
                 color: '#fff',
@@ -57,6 +57,11 @@ export default class Info extends Component {
         </View>
         <Text style={styles.faqTitle}>How can I trust you aren't spying on me?</Text>
         <Text style={styles.faqParagraph}>First, this app didn't ask for any special permissions. Second, the app is Open Source, meaning you can go read the code yourself if you don't believe me.</Text>
+        <View style={{paddingHorizontal: 20, paddingVertical: 10}}>
+          <Divider />
+        </View>
+        <Text style={styles.faqTitle}>Where can I see the code for this app?</Text>
+        <Button title="Here" style={{paddingBottom: 20}} small={true} backgroundColor="#1d46af" onPress={() => {Linking.openURL('https://github.com/DeadPackets/CRNotify-App')}}></Button>
         <View style={{paddingHorizontal: 20, paddingVertical: 10}}>
           <Divider />
         </View>
