@@ -34,7 +34,7 @@ export default class Info extends Component {
 
   render() {
     return (<View style={{backgroundColor: '#ffffff', flex: 1}}>
-      <StatusBar barStyle="light-content" />
+      <StatusBar animated={true} backgroundColor="#476dc5" showHideTransition={'fade'} barStyle="light-content" />
       <Header centerComponent={{
               text: 'CRNotify',
               style: {
