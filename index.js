@@ -24,7 +24,7 @@ import SplashScreen from 'react-native-splash-screen'
 import {Router} from './views/router'
 import InfoScreen from './views/InfoScreen';
 import ManageScreen from './views/ManageScreen';
-// import SettingsScreen from './views/SettingsScreen';
+
 
 export default class App extends Component {
 
