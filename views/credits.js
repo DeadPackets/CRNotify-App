@@ -36,6 +36,7 @@ export default class Info extends Component {
                 fontWeight: '900'
               }
             }}
+            statusBarProps={{ barStyle: 'light-content', backgroundColor: "#476dc5" }}
             rightComponent={<Icon size={24} name="sign-out" color="#ffffff" type="font-awesome" onPress={this.props.screenProps.logOut}/>}
           />
       <ScrollView>

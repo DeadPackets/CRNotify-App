@@ -30,7 +30,8 @@ export default class Manage extends Component {
       crns: [],
       selectedOption: 'closed',
       busy: false,
-      loggedIn: true
+      loggedIn: true,
+      error: false
     }
   }
 
@@ -59,10 +60,11 @@ export default class Manage extends Component {
       if (responseJSON.success) {
         this.fetchCRNs()
         this.displaySuccess('Successfully added CRN!')
-        this.setState({busy: false})
+        this.setState({busy: false, error: false})
+        this.input.clearText()
       } else {
         this.displayError(responseJSON.error)
-        this.setState({busy: false})
+        this.setState({busy: false, error: true})
       }
     })
   }
@@ -122,12 +124,13 @@ export default class Manage extends Component {
             fontWeight: '900'
           }
         }}
+        statusBarProps={{ barStyle: 'light-content', backgroundColor: "#476dc5" }}
         rightComponent={<Icon size={24} name="sign-out" color="#ffffff" type="font-awesome" onPress={this.props.screenProps.logOut}/>}
       />
       <ScrollView keyboardShouldPersistTaps='always' keyboardDismissMode='on-drag'>
         <Text style={styles.welcomeTitle}>Manage CRNs</Text>
         <FormLabel>CRN</FormLabel>
-        <FormInput keyboard="numeric" returnKeyType="done" disabled={this.state.busy} placeholder="Enter CRN here" onChangeText={(val) => this.setState({crnVal: val})} value={this.state.crnVal}/>
+        <FormInput clearButtonMode="while-editing" shake={this.state.error} ref={input => this.input = input} maxLength={8} returnKeyType="done" disabled={this.state.busy} placeholder="Enter CRN here" onChangeText={(val) => this.setState({crnVal: val})} value={this.state.crnVal}/>
         <View style={{
             paddingHorizontal: 20,
             paddingTop: 20

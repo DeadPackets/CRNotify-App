@@ -127,7 +127,7 @@ export default class App extends Component {
           return <Router screenProps={{logOut: this.logOut.bind(this)}}/>
         } else {
           return (<LinearGradient style={styles.container} colors={['#00C9FF', '#92FE9D']}>
-            <StatusBar animated={true} showHideTransition={'fade'} backgroundColor='#00C9FF' translucent={true} barStyle="dark-content" />
+            <StatusBar animated={true} showHideTransition={'fade'} backgroundColor='#00C9FF' translucent={true} barStyle="light-content" />
             <View style={styles.mainContainer}>
               <Animatable.Text animation="fadeInUp" duration={1500} style={styles.mainTitle}>CRNotify</Animatable.Text>
               <Animatable.Text animation="zoomIn" duration={1000} delay={500} style={styles.mainParagraph}>This is an app built for AUS students to recieve notifications on any changes in the availability of their chosen CRNs.</Animatable.Text>
@@ -158,7 +158,7 @@ export default class App extends Component {
       }
     } else {
       return (<LinearGradient style={styles.container} colors={['#00C9FF', '#92FE9D']}>
-        <StatusBar animated={true} showHideTransition={'fade'} backgroundColor='#00C9FF' translucent={true} barStyle="dark-content" />
+        <StatusBar animated={true} showHideTransition={'fade'} backgroundColor='#00C9FF' translucent={true} barStyle="light-content" />
         <View style={styles.mainContainer}>
           <Animatable.Text animation="fadeInUp" duration={500} style={styles.mainTitle}>CRNotify</Animatable.Text>
           <Animatable.View animation="fadeInUp" duration={500} style={styles.disabledStatus}>
