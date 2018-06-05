@@ -17,9 +17,6 @@ export default class Info extends Component {
     super(props)
   }
 
-  openFAQ() {
-  }
-
   static navigationOptions = {
     tabBarLabel: 'FAQ',
     // Note: By default the icon is only shown on iOS. Search the showIcon option below.
