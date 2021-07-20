@@ -10,7 +10,7 @@
   "dependencies": {
     "babel-core": "^6.26.0",
     "react": "16.2.0",
-    "react-native": "0.52.0",
+    "react-native": "0.62.3",
     "react-native-animatable": "^1.2.4",
     "react-native-dropdownalert": "^3.1.2",
     "react-native-elements": "^0.19.0",
